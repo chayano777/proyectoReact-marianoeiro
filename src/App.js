@@ -1,10 +1,15 @@
 import './App.css';
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
+
+
 
 function App() {
   return (
-    <h2 className="text-3xl font-bold underline">
-      Hello world!
-    </h2>
+    <>
+      <NavBar />
+      <ItemListContainer mensaje='Bienvenidos a Pichonos' />
+    </>
   );
 }
 

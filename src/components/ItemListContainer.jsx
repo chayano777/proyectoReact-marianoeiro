@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import ItemList from './ItemList'
 
+
+
+
+
 const ItemListContainer = ({ mensaje }) => {
  
   const [items, setItems] = useState([]);
@@ -16,8 +20,10 @@ const ItemListContainer = ({ mensaje }) => {
   return (
     <>
       <h1 className="text-3xl text-center p-5">{mensaje}</h1>  
-        <div className="container mx-40 mt-10">
-          <ItemList items={items} />  
+        <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+        
+          <ItemList items={items} />
+      
         </div>
         
     </>

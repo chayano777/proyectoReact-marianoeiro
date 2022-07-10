@@ -4,7 +4,7 @@ const Cart = () => {
     const {carrito} = useParams();
 
   return (
-    <div className="text-center text-2xl">CODER TIENE UNA PAGINA DE MIERDA</div>
+    <div className="text-center text-2xl">CODER HOUSE</div>
   )
 }
 

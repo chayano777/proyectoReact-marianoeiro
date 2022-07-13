@@ -2,11 +2,15 @@ import React, { useState } from "react";
 
 const ItemCount = ({ stock, initial = 1, onAdd }) => {
   const [count, setcount] = useState(initial);
-
   const add = () => {
     count < stock && setcount(count + 1);
     count >= stock && alert("No hay mas unidades");
   };
+
+  const click = () => {
+    onAdd(count);
+    console.log(count);
+  }
 
   const rest = () => {
     setcount(Math.max(count - 1, 1));
@@ -24,10 +28,10 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
         </button>
       </div>
       <button
-        className="text-1xl font-bold p-3 text-white bg-red-400 bor"
-        onClick={onAdd}
-      >
-        Comprar
+        className="mt-5 px-3 py-2 border border-orange-400 rounded-lg text-md font-medium 
+        text-slate-800 bg-orange-200 hover:bg-stone-300 hover:border-stone-300 text-center"
+        onClick={click}>
+        Añadir al carrito
       </button>
     </>
   );

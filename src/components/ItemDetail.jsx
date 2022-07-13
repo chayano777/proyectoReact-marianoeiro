@@ -1,7 +1,18 @@
 import React from 'react'
+import ItemCount from './ItemCount'
+import { useState } from 'react'
+import { Link } from 'react-router-dom';
+
+
 
 
 const ItemDetail = ({item}) => {
+  const [cantidad, setCantidad] = useState();
+
+  const onAdd = (cantidad) => {
+    setCantidad(cantidad)
+  }
+
   return (
     <div className='flex p-4 border rounded-lg shadow-lg'>
       <img className="w-1/3" src={item.pictures[0].url} alt="Imagen" />
@@ -12,6 +23,17 @@ const ItemDetail = ({item}) => {
           <p className="mt-1 text-xl text-gray-900 text-right">
             $ {item.price}
           </p>
+          <div>
+            { (cantidad) ? <div className='mt-5 px-3 py-2 border border-orange-400 rounded-lg text-md font-medium 
+                  text-slate-800 bg-orange-200 hover:bg-stone-300 hover:border-stone-300 text-center'>  
+            <Link to={"/carrito"} >
+              Finalizar compra</Link>
+              </div>
+            :
+            <ItemCount stock={item.available_quantity} initial={1} onAdd={onAdd} />
+
+          }
+          </div>
         </div>
       </div>
     </div>

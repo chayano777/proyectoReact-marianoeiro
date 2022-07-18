@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 
 
+
 const Item = ({ item }) => {
+
+
   return (
     <div className="flex p-4 border rounded-lg shadow-lg">
       <img className="w-1/3" src={item.thumbnail} alt="Imagen" />

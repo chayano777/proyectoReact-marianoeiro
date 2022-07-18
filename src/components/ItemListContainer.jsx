@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import {FadeLoader} from "react-spinners";
+import { useParams } from "react-router-dom";
 
 const spinner = () => {
   return (
@@ -12,13 +13,14 @@ const spinner = () => {
 
 const ItemListContainer = ({ mensaje }) => {
   const [items, setItems] = useState([]);
+  const {categoryN} = useParams();
 
   useEffect(() => {
-    fetch("https://api.mercadolibre.com/sites/MLA/search?q=ropa%20bebe")
+    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${categoryN ? categoryN : 'ropa%20bebe'}`)
       .then((Response) => Response.json())
       .then((json) => setItems(json.results))
       .catch((err) => console.log(err));
-  }, []);
+  }, [categoryN]);
 
   return (
     <>

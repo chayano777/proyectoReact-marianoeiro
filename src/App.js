@@ -8,19 +8,23 @@ import {
 	Routes,
 	Route,
  } from "react-router-dom";
+import CartProvider from './context/CartContext';
 
 function App() {
   return (
-           
-      <BrowserRouter>
+    
+    <BrowserRouter>
+      <CartProvider>
               <NavBar />
           <Routes>
               <Route path='/' element={<ItemListContainer mensaje='Bienvenidos a Pichonos' />}/>
               <Route path='/carrito' element={<Cart />}/>
+              <Route path='/category/:categoryN' element={<ItemListContainer mensaje='Bienvenidos a Pichonos' />}/>
               <Route path='/:id' element={<ItemDetailContainer />} />
           </Routes>  
+      </CartProvider>
       </BrowserRouter>
-
+  
     
   );
 }

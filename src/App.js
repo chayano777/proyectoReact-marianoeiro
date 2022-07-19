@@ -14,7 +14,7 @@ function App() {
   return (
     
     <BrowserRouter>
-      <CartProvider>
+      <CartProvider >
               <NavBar />
           <Routes>
               <Route path='/' element={<ItemListContainer mensaje='Bienvenidos a Pichonos' />}/>
@@ -22,10 +22,8 @@ function App() {
               <Route path='/category/:categoryN' element={<ItemListContainer mensaje='Bienvenidos a Pichonos' />}/>
               <Route path='/category/:categoryN/:id' element={<ItemDetailContainer />} />
           </Routes>  
-      </CartProvider>
-      </BrowserRouter>
-  
-    
+      </CartProvider>      
+    </BrowserRouter>
   );
 }
 

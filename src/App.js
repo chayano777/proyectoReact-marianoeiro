@@ -21,6 +21,7 @@ function App() {
               <Route path='/carrito' element={<Cart />}/>
               <Route path='/category/:categoryN' element={<ItemListContainer mensaje='Bienvenidos a Pichonos' />}/>
               <Route path='/category/:categoryN/:id' element={<ItemDetailContainer />} />
+              <Route path='/:id' element={<ItemDetailContainer />} />
           </Routes>  
       </CartProvider>      
     </BrowserRouter>

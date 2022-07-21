@@ -31,7 +31,7 @@ const ItemDetail = ({item}) => {
             { (cantidad) ? <div className='mt-5 px-3 py-2 border border-orange-400 rounded-lg text-md font-medium 
                   text-slate-800 bg-orange-200 hover:bg-stone-300 hover:border-stone-300 text-center'>  
             <Link to={"/carrito"} >
-              Finalizar compra</Link>
+              Agregar</Link>
               </div>
             :
             <ItemCount stock={item.available_quantity} initial={1} onAdd={onAdd} />

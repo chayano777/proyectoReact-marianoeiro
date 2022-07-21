@@ -1,4 +1,4 @@
-import { createContext, useState } from "react"
+import { createContext, useState, useEffect } from "react"
 
 
 export const cartContext = createContext();
@@ -6,6 +6,15 @@ const {Provider} = cartContext;
 
 const CartProvider = ({children}) => {
     const [products, setProducts] = useState([]);
+    const [quantyProd, setQuantyProd] = useState(0);
+
+    useEffect(()=>{
+        let cant = 0;
+        products.forEach(product =>{
+            cant += product.cantidad
+        });
+        setQuantyProd(cant);
+    },[products])
 
     const addItem = (item) => {
         if(isInProducts(item.id)){
@@ -32,7 +41,7 @@ const CartProvider = ({children}) => {
     } 
 
  return ( 
-     <Provider value={{addItem, removeItem, clearItem}}>
+     <Provider value={{products, addItem, removeItem, clearItem, quantyProd}}>
         {children}
      </Provider>
     )

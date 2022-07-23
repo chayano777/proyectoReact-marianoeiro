@@ -42,18 +42,5 @@
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.4"
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "postcss.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chayano777/proyectoReact-marianoeiro.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/chayano777/proyectoReact-marianoeiro/issues"
-  },
-  "homepage": "https://github.com/chayano777/proyectoReact-marianoeiro#readme"
+  }
 }

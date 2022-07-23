@@ -16,11 +16,15 @@ const ItemListContainer = ({ mensaje }) => {
   const {categoryN} = useParams();
 
   useEffect(() => {
-    fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${categoryN ? categoryN : 'ropa%20bebe'}`)
+    
+    
+    
+    
+    /*fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${categoryN ? categoryN : 'ropa%20bebe'}`)
       .then((Response) => Response.json())
       .then((json) => setItems(json.results))
-      .catch((err) => console.log(err));
-  }, [categoryN]);
+      .catch((err) => console.log(err));*/
+  }, []);
 
   return (
     <>

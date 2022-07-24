@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import {FadeLoader} from "react-spinners";
 import { useParams } from "react-router-dom";
+import { db } from "../firebase/firebase";
+import { getDocs, collection, query, where} from "firebase/firestore"
+
 
 const spinner = () => {
   return (
@@ -13,18 +16,30 @@ const spinner = () => {
 
 const ItemListContainer = ({ mensaje }) => {
   const [items, setItems] = useState([]);
+  const [loaded, setLoaded] = useState(true);
   const {categoryN} = useParams();
 
   useEffect(() => {
-    
-    
-    
-    
+    const itemCollection = collection(db, "productos");
+    const q = query(itemCollection, where('category', '==', 'accesoriobebe'));
+    getDocs(q)
+    .then( result =>{
+      const lista = result.docs.map(doc => {
+        return {
+          id: doc.id,
+          ...doc.data(),
+        }
+      })
+      setItems(lista);
+    })
+    .catch((err) => console.log(err))
+    .finally(() => setLoaded(false))
+
     /*fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${categoryN ? categoryN : 'ropa%20bebe'}`)
       .then((Response) => Response.json())
       .then((json) => setItems(json.results))
       .catch((err) => console.log(err));*/
-  }, []);
+  }, [categoryN]);
 
   return (
     <>

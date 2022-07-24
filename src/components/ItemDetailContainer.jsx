@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import ItemDetail from "./ItemDetail"
 import {CircleLoader} from "react-spinners"
 import { useParams } from "react-router-dom";
+import { db } from "../firebase/firebase";
 
 const spinner = () => {
 	return (
@@ -17,6 +18,7 @@ const ItemDetailContainer = () => {
 	const [item, setItem] = useState();
 
 	useEffect(() => {
+
 		fetch(`https://api.mercadolibre.com/items/${id}`)
 		  .then((Response) => Response.json())
 		  .then((json) => setItem(json))

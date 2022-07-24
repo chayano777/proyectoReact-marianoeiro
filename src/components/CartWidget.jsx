@@ -4,7 +4,6 @@ import { cartContext } from "../context/CartContext";
 
 const CartWidget = () => {
   const { quantyProd } = useContext(cartContext);
-  console.log(quantyProd);
 
   return (
     <div className="flex">

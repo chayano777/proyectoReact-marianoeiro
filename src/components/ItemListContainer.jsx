@@ -16,7 +16,6 @@ const spinner = () => {
 
 const ItemListContainer = ({ mensaje }) => {
   const [items, setItems] = useState([]);
-  const [loaded, setLoaded] = useState(true);
   const {categoryN} = useParams();
 
   useEffect(() => {
@@ -31,9 +30,9 @@ const ItemListContainer = ({ mensaje }) => {
         }
       })
       setItems(lista);
+      console.log(lista);
     })
     .catch((err) => console.log(err))
-    .finally(() => setLoaded(false))
 
     /*fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${categoryN ? categoryN : 'ropa%20bebe'}`)
       .then((Response) => Response.json())

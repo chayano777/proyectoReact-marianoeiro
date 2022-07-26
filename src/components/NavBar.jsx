@@ -14,8 +14,8 @@ const NavBar = () => {
         <nav className='flex'>
             <ul className='flex gap-4 cursor-pointer' >
                 <li><Link to={"/category/bebe"}>Inicio</Link></li>
-                <li><Link to="/category/ropa%20bebe">Ropa</Link></li>
-                <li><Link to="/category/accesorio%20bebe">Accesorios</Link></li>
+                <li><Link to="/category/:ropabebe">Ropa</Link></li>
+                <li><Link to="/category/:accesoriobebe">Accesorios</Link></li>
             </ul>
             <Link to={"/carrito"}><CartWidget /></Link> 
         </nav>

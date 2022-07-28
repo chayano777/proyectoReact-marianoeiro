@@ -20,7 +20,7 @@ const ItemListContainer = ({ mensaje }) => {
 
   useEffect(() => {
     const itemCollection = collection(db, "productos");
-    const q = query(itemCollection, where('category', '==', categoryN));
+    const q = (categoryN) ? query(itemCollection, where('category', '==', categoryN)) : collection(db, 'productos');
     getDocs(q)
     .then( result =>{
       const lista = result.docs.map(doc => {
@@ -30,7 +30,6 @@ const ItemListContainer = ({ mensaje }) => {
         }
       })
       setItems(lista);
-      console.log(lista);
     })
     .catch((err) => console.log(err))
   }, [categoryN]);

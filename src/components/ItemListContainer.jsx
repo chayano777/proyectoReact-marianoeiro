@@ -33,11 +33,6 @@ const ItemListContainer = ({ mensaje }) => {
       console.log(lista);
     })
     .catch((err) => console.log(err))
-
-    /*fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${categoryN ? categoryN : 'ropa%20bebe'}`)
-      .then((Response) => Response.json())
-      .then((json) => setItems(json.results))
-      .catch((err) => console.log(err));*/
   }, [categoryN]);
 
   return (

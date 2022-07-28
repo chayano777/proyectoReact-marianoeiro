@@ -29,10 +29,6 @@ const ItemDetailContainer = () => {
       }
       setItem(producto);
     });
-    /*fetch(`https://api.mercadolibre.com/items/${id}`)
-		  .then((Response) => Response.json())
-		  .then((json) => setItem(json))
-		  .catch((err) => console.log(err));*/
   }, [id]);
 
   return (

@@ -3,7 +3,7 @@ import ItemDetail from "./ItemDetail";
 import { CircleLoader } from "react-spinners";
 import { useParams } from "react-router-dom";
 import { db } from "../firebase/firebase";
-import { getDocs, collection, query, where } from "firebase/firestore";
+import { getDoc, doc, collection, query, where } from "firebase/firestore";
 
 const spinner = () => {
   return (
@@ -14,21 +14,20 @@ const spinner = () => {
 };
 
 const ItemDetailContainer = () => {
-  const { id } = useParams();
+  const { id } = useParams([]);
   const [item, setItem] = useState();
 
   
   useEffect(() => {
 	const itemCollection = collection(db, "productos");
-	const q = query(itemCollection, where("id", "==", "id"));
-    getDocs(q).then((result) => {
-      const lista = result.docs.map((doc) => {
-        return {
-        
-          ...doc.data(),
-        };
-      });
-      setItem(lista);
+	const refDoc = doc(itemCollection, id);
+  getDoc(refDoc)
+    .then((result) => {
+      const producto = {
+          id: result.id,
+          ...result.data(),
+      }
+      setItem(producto);
     });
     /*fetch(`https://api.mercadolibre.com/items/${id}`)
 		  .then((Response) => Response.json())

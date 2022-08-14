@@ -9,7 +9,6 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
 
   const click = () => {
     onAdd(count);
-    console.log(count);
   }
 
   const rest = () => {

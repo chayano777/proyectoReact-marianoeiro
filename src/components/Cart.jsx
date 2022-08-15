@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { cartContext } from "../context/CartContext";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { FaTrash } from "react-icons/fa";
 import Checkout from "./Checkout";
 
@@ -11,12 +11,16 @@ const Cart = () => {
 
   const [checkout, setCheckout] = useState(false);
 
-  const addTotal = () => {
-    
+  
+  useEffect (() => {
+    let a = 0;
     products.forEach((item) => {
-      setTotal( item.price * item.cantidad);
+      a +=item.price * item.cantidad
+      console.log(total);
     });
-  };
+    setTotal(a);
+  },[products]);
+  
 
   const clickRemove = (id) => {
     removeItem(id);
@@ -76,7 +80,7 @@ const Cart = () => {
                   <button
                     onClick={() => clickClear()}
                     className="mt-5 px-3 py-2 border border-orange-400 rounded-lg text-md font-medium 
-                  text-slate-800 bg-orange-200 hover:bg-stone-300 hover:border-stone-300 text-center"
+                  text-slate-800 bg-orange-200 hover:bg-orange-400 hover:border-stone-300 text-center"
                   >
                     Borrar Todo
                   </button>
@@ -84,13 +88,13 @@ const Cart = () => {
                   <div className="text-center lg:text-right my-10">
                     <button
                       onClick={() => clickCheckout(true)}
-                      className="bg-blue-600 text-white text-base py-2 px-4 lg:px-8 rounded-md hover:bg-blue-500"
+                      className="bg-orange-200 text-slate-800 text-base py-2 px-4 lg:px-8 rounded-md hover:bg-orange-400"
                     >
                       Comprar ahora
                     </button>
                   </div>
                 </div>
-                TOTAL ${}
+                TOTAL ${total}
               </div>
             ) : null}
           </div>

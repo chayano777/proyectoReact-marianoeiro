@@ -48,29 +48,31 @@ const Checkout = ({ products, total, clickClear }) => {
          {(visible) ?
             <div className="flex mt-10 mb-28 items-center justify-start bg-white px-10 lg:px-0">
                <div className="mx-auto w-full max-w-lg">
-                  <h1 className="text-4xl font-medium">Finalizar compra</h1>
-                  <p className="mt-3">Complete los siguientes datos para finalizar la compra</p>
+                  <h1 className="text-4xl font-medium text-center"><strong className="text-orange-600">Finalizar compra</strong></h1>
+                  <p className="mt-3 text-center">Completar el <strong className="text-orange-600">Formulario</strong> para finalizar la compra</p>
 
                   <form onSubmit={handleSubmit(clickCheckout)} className="mt-10">
-                     <div className="grid gap-6 sm:grid-cols-2">
+                     <div className="grid gap-10 sm:grid-cols-1">
                         <div className="relative z-0">
-                           <input type="text" {...register('name')} className="peer block w-full appearance-none border-0 border-b border-orange-600 bg-transparent py-2.5 px-0 text-sm text-orange-900 focus:border-orange-600 focus:outline-none focus:ring-0" placeholder=" " required />
-                           <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-orange-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-orange-600 peer-focus:dark:text-orange-300">Tu nombre</label>
+                           <input type="text" {...register('name')} className="peer block w-full appearance-none border-0 border-b border-orange-600 bg-transparent py-2.5 px-0 text-sm text-slate-900 focus:border-orange-600 focus:outline-none focus:ring-0" placeholder=" " required />
+                           <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-slate-900 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-orange-600 peer-focus:dark:text-orange-300">Tu nombre</label>
                         </div>
                         <div className="relative z-0">
-                           <input type="text" {...register('lastName')} className="peer block w-full appearance-none border-0 border-b border-orange-500 bg-transparent py-2.5 px-0 text-sm text-orange-700 focus:border-orange-600 focus:outline-none focus:ring-0" placeholder=" " required />
-                           <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-orange-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-orange-600 peer-focus:dark:text-orange-300">Tu apellido</label>
+                           <input type="text" {...register('lastName')} className="peer block w-full appearance-none border-0 border-b border-orange-500 bg-transparent py-2.5 px-0 text-sm text-slate-900 focus:border-orange-600 focus:outline-none focus:ring-0" placeholder=" " required />
+                           <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-slate-900 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-orange-600 peer-focus:dark:text-orange-300">Tu apellido</label>
                         </div>
                         <div className="relative z-0">
-                           <input type="text" {...register('email')} className="peer block w-full appearance-none border-0 border-b border-orange-500 bg-transparent py-2.5 px-0 text-sm text-orange-700 focus:border-orange-600 focus:outline-none focus:ring-0" placeholder=" " required />
-                           <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-orange-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-orange-600 peer-focus:dark:text-orange-300">Tu email</label>
+                           <input type="text" {...register('email')} className="peer block w-full appearance-none border-0 border-b border-orange-500 bg-transparent py-2.5 px-0 text-sm text-slate-900 focus:border-orange-600 focus:outline-none focus:ring-0" placeholder=" " required />
+                           <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-slate-900 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-orange-600 peer-focus:dark:text-orange-300">Tu email</label>
                         </div>
                         <div className="relative z-0">
-                           <input type="text" {...register('phone')} className="peer block w-full appearance-none border-0 border-b border-orange-500 bg-transparent py-2.5 px-0 text-sm text-orange-700 focus:border-orange-600 focus:outline-none focus:ring-0" placeholder=" " required />
-                           <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-orange-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-orange-600 peer-focus:dark:text-orange-300">Tu teléfono</label>
+                           <input type="text" {...register('phone')} className="peer block w-full appearance-none border-0 border-b border-orange-500 bg-transparent py-2.5 px-0 text-sm text-slate-900 focus:border-orange-600 focus:outline-none focus:ring-0" placeholder=" " required />
+                           <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-slate-900 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-orange-600 peer-focus:dark:text-orange-300">Tu teléfono</label>
                         </div>
                      </div>
-                     <button type="submit" className="mt-5 bg-orange-200 text-slate-800 text-base px-8 py-2 rounded-md hover:bg-orange-600">Finalizar compra</button>
+                     <div className="flex justify-center">
+                           <button type="submit" className="mt-20 bg-orange-200 text-slate-800 text-medium px-8 py-2 rounded-md border border-orange-600 hover:bg-orange-600">Finalizar compra</button>   
+                     </div>
                     
                   </form>
 

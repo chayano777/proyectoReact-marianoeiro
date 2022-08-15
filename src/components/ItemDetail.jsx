@@ -29,7 +29,7 @@ const ItemDetail = ({item}) => {
           </p>
           <div>
             { (cantidad) ? <div className='mt-5 px-3 py-2 border border-orange-400 rounded-lg text-md font-medium 
-                  text-slate-800 bg-orange-200 hover:bg-stone-300 hover:border-stone-300 text-center'>  
+                  text-slate-800 bg-orange-200 hover:bg-orange-400 hover:border-orange-600 text-center'>  
             <Link to={"/carrito"} >
               Finalizar Compra</Link>
               </div>

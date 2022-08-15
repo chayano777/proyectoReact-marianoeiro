@@ -16,7 +16,6 @@ const Cart = () => {
     let a = 0;
     products.forEach((item) => {
       a +=item.price * item.cantidad
-      console.log(total);
     });
     setTotal(a);
   },[products]);
@@ -49,7 +48,7 @@ const Cart = () => {
                   <Link
                     to="/category/mixbebe"
                     className="mt-5 px-3 py-2 border border-orange-400 rounded-lg text-md font-medium 
-                  text-slate-800 bg-orange-200 hover:bg-stone-300 hover:border-stone-300 text-center"
+                  text-slate-800 bg-orange-200 hover:bg-orange-400 hover:border-orange-400 text-center"
                   >
                     Volver
                   </Link>
@@ -63,7 +62,7 @@ const Cart = () => {
                 >
                   <div className="w-3/5 ml-3 text-md">{item.title}</div>
                   <button onClick={() => clickRemove(item.id)}>
-                    <FaTrash className="text-2xl" />
+                    <FaTrash className="text-2xl text-orange-600" />
                   </button>
                   <div className="w-1/5 ml-3 text-lg text-center">
                     Cantidad: {item.cantidad}
@@ -80,15 +79,14 @@ const Cart = () => {
                   <button
                     onClick={() => clickClear()}
                     className="mt-5 px-3 py-2 border border-orange-400 rounded-lg text-md font-medium 
-                  text-slate-800 bg-orange-200 hover:bg-orange-400 hover:border-stone-300 text-center"
+                  text-slate-800 bg-orange-200 hover:bg-orange-400 hover:border-orange-300 text-center"
                   >
                     Borrar Todo
                   </button>
-                  <hr />
                   <div className="text-center lg:text-right my-10">
                     <button
                       onClick={() => clickCheckout(true)}
-                      className="bg-orange-200 text-slate-800 text-base py-2 px-4 lg:px-8 rounded-md hover:bg-orange-400"
+                      className="bg-orange-200 border border-orange-400 text-slate-800 text-md font-medium mt-5 ml-4 py-2 px-3 lg:px-8 rounded-lg hover:bg-orange-400"
                     >
                       Comprar ahora
                     </button>

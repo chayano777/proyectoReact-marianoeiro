@@ -3,7 +3,7 @@ import ItemDetail from "./ItemDetail";
 import { CircleLoader } from "react-spinners";
 import { useParams } from "react-router-dom";
 import { db } from "../firebase/firebase";
-import { getDoc, doc, collection, query, where } from "firebase/firestore";
+import { getDoc, doc, collection } from "firebase/firestore";
 
 const spinner = () => {
   return (
